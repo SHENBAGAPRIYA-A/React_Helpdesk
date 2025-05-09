@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Header from './Userprofiledrawer'; // This is your top header
-import './Reportpage.css';
+import './ReportPage.css';
 import userImg from '../assets/user-image.png';
 import adminImg from '../assets/admin-image.png';
 
