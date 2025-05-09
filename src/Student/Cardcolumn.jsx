@@ -1,5 +1,5 @@
 import TicketCard from './TicketCard';
-import "./App.css";
+import "../App.css";
 
 export default function CardColumn({ title }) {
   return (

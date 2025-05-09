@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.auth-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #e0f7fa, #bee4e7);
+  padding: 80px 20px;
+}
+
+.auth-form {
+  background: white;
+  padding: 50px 60px;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 650px;
+  transition: all 0.3s ease;
+}
+
+.auth-form:hover {
+  transform: translateY(-5px);
+}
+
+.auth-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+  color: #4a148c;
+  font-weight: 600;
+}
+
+.auth-input{
+    width: 100%;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.auths-input {
+  width: 100%;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+  margin-left: 1px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-input:focus,
+.auths-input:focus {
+  border-color: #7b1fa2;
+  outline: none;
+  box-shadow: 0 0 5px rgba(123, 31, 162, 0.4);
+}
+
+.auths-input {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.auths-button {
+  width: 100%;
+  padding: 16px;
+  background-color: #5ea4a4;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auths-button:hover {
+  background-color: #025b63;
+}
+
+.auth-link {
+  color: #078ca4;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .auth-form {
+    padding: 40px 30px;
+    max-width: 90%;
+  }
+
+  .auth-title {
+    font-size: 26px;
+  }
+
+  .auth-input,
+  .auths-input {
+    font-size: 15px;
+    padding: 14px 16px;
+  }
+
+  .auth-button {
+    font-size: 16px;
+  }
+}

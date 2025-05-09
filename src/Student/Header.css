@@ -1,0 +1,93 @@
+/* Header.css */
+
+.dashboard-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .profile:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .profile img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .profile span {
+    font-weight: 500;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .dashboard-profile-drawer {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #fff;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 10px 0;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .dashboard-profile-drawer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dashboard-profile-drawer li {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .dashboard-profile-drawer li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .dashboard-profile-drawer li svg {
+    margin-right: 10px;
+    color: #555;
+  }
+  
+  .dashboard-profile-drawer li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-5%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

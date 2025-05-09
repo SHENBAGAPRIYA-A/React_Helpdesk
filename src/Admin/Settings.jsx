@@ -15,7 +15,7 @@ const AdminSettingsPage = () => {
   return (
     <div className="settings-container">
       <Sidebar />
-      <div className="settings-content">
+      <div className="settingscontent">
         <Header />
         <div className="settings-body">
           <h2>Settings</h2>
@@ -28,15 +28,7 @@ const AdminSettingsPage = () => {
             </select>
           </div>
 
-          <div className="settings-section">
-            <h3>Language</h3>
-            <select value={language} onChange={handleLanguageChange}>
-              <option value="English">English</option>
-              <option value="Spanish">Spanish</option>
-              <option value="French">French</option>
-              <option value="German">German</option>
-            </select>
-          </div>
+          
 
           <div className="settings-section">
             <h3>Notifications</h3>

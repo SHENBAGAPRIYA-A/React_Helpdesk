@@ -49,7 +49,7 @@ const ChatList = ({ onSelectChat }) => (
   <div className="chat-list-section">
     {users.map((user) => (
       <div key={user.id} className="chat-user" onClick={() => onSelectChat(user)}>
-        <img className="user"src={userImg} alt={user.name} />
+        <img className="usr"src={userImg} alt={user.name} />
         <div className="chat-info">
           <div className="chat-info-header">
             <h4>{user.name}</h4>

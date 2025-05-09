@@ -127,12 +127,7 @@
   border-radius: 4px;
   cursor: pointer;
 }
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
+
 
 .add-button {
   background-color: #007bff;
@@ -142,7 +137,7 @@
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
-  margin-right:100px;
+  margin-right:20px;
   transition: background-color 0.2s ease-in-out;
 }
 
@@ -411,16 +406,12 @@ input:checked + .slider:before {
   overflow-y: auto;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
+
 
 .title {
   font-size: 24px;
   font-weight: bold;
+  
 }
 
 /* Settings form */
@@ -513,6 +504,7 @@ input:checked + .slider:before {
 .tabs {
   display: flex;
   margin-bottom: 20px;
+  margin-top: 20px;
   gap: 20px;
 }
 
@@ -638,3 +630,67 @@ textarea {
 }
 
 
+
+.app-layout {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px; /* adjust based on your Sidebar component */
+  background-color: #f0f0f0;
+}
+
+.main-content-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  height: 60px; /* adjust as needed */
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+.button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-raise {
+  background-color: #28a745; /* Green */
+  color: #fff;
+}
+
+.btn-raise:hover {
+  background-color: #218838;
+}
+
+.btn-cancel {
+  background-color: #dc3545; /* Red */
+  color: #fff;
+}
+
+.btn-cancel:hover {
+  background-color: #c82333;
+}

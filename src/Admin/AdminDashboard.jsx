@@ -3,25 +3,94 @@ import React from 'react';
 import './admin.css';
 import adminImage from '../assets/admin-image.png';
 import userImage from '../assets/user-image.png';
+import UpdateProfileModal from './AdminEditprofile';
 import Sidebar from './Sidebar';
+import { Link } from 'react-router-dom';
+import { useState,useEffect,useRef } from 'react';
+import { FaSearch,FaTachometerAlt, FaUserShield,FaTicketAlt, FaUsers, FaComments, FaChartBar, FaBell, FaBook, FaCog, FaClipboardList, FaStar, FaAssistiveListeningSystems, FaSignOutAlt, FaChargingStation } from 'react-icons/fa';
 
-import { FaSearch,FaTachometerAlt, FaUserShield,FaTicketAlt, FaUsers, FaComments, FaChartBar, FaBell, FaBook, FaCog, FaClipboardList, FaStar } from 'react-icons/fa';
 
+const Header = () => {
+  const [isDrawerOpen, setDrawerOpen] = useState(false);
+  const [showProfileModal, setShowProfileModal] = useState(false);
 
+  const drawerRef = useRef(null);
+  const profileRef = useRef(null);
 
-const Header = () => (
-    <div className="header">
-      <div className="search-container">
-        <FaSearch />
+  const toggleDrawer = () => setDrawerOpen(!isDrawerOpen);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        drawerRef.current &&
+        !drawerRef.current.contains(event.target) &&
+        profileRef.current &&
+        !profileRef.current.contains(event.target)
+      ) {
+        setDrawerOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside); // changed from mousedown to click
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, []);
+
+  return (
+    <div className="dashboard-header">
+      {/* Search Container */}
+      <div className="dashboard-search-container">
+        <FaSearch className="search-icon" />
         <input type="text" placeholder="Search..." />
       </div>
-      
-      <div className="profile">
-        <img src={adminImage} alt="profile" />
+
+      {/* Profile */}
+      <div className="admin-profile" ref={profileRef} onClick={toggleDrawer}>
+        <img src={adminImage} alt="Admin" />
         <span>Admin</span>
       </div>
+
+      {/* Profile Drawer */}
+      {isDrawerOpen && (
+        <div className="dashboard-profile-drawer" ref={drawerRef}>
+          <ul>
+            <li
+              onClick={(e) => {
+                e.stopPropagation();
+                setShowProfileModal(true);
+                setDrawerOpen(false);
+              }}
+            >
+              <FaUserShield /> My Profile
+            </li>
+            <li
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+            >
+              <FaCog />
+              <Link to="/admin/settings"> Settings</Link>
+            </li>
+            <li
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+            >
+              <FaSignOutAlt />
+              <Link to="/"> Logout</Link>
+            </li>
+          </ul>
+        </div>
+      )}
+
+      {/* Profile Modal */}
+      {showProfileModal && (
+        <UpdateProfileModal onClose={() => setShowProfileModal(false)} />
+      )}
     </div>
   );
+};
+
+
 
 const DashboardCards = () => (
   <div className="cards">
@@ -52,9 +121,9 @@ const NewCustomers = () => (
   <div className="section new-users">
     <h3>New Users</h3>
     <ul>
-      <li><img className="user" src={userImage} alt="user" /> Siva</li>
-      <li><img className="user"src={userImage} alt="user" /> Priya</li>
-      <li><img className="user"src={userImage} alt="user" /> Kumar</li>
+      <li><img className="usr" src={userImage} alt="usr" /> Siva</li>
+      <li><img className="usr"src={userImage} alt="usr" /> Priya</li>
+      <li><img className="usr"src={userImage} alt="usr" /> Kumar</li>
     </ul>
   </div>
 );
