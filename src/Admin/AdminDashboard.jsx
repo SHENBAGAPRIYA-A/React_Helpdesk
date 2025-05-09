@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './admin.css';
+import './Admin.css';
 import adminImage from '../assets/admin-image.png';
 import userImage from '../assets/user-image.png';
 import UpdateProfileModal from './AdminEditprofile';
